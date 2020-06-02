@@ -43,7 +43,7 @@ def play(board)
   if won?(board) == true
     "Congratulations #{winner(board)}!"
   elsif draw?(board) == true
-    "The game has ended in a draw"
+    "Cat's Game!"
   end
 end
 
