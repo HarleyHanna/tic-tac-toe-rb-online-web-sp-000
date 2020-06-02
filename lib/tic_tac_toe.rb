@@ -37,11 +37,13 @@ def turn(board)
 end
 
 def play(board)
-  input = gets
-  turn_number = 0
-  until turn_number == 9
+  until over?(board) == true
     turn(board)
-    turn_number = turn_number + 1
+  end
+  if won?(board) == true
+    "Congratulations #{winner(board)}, you have won!"
+  elsif draw?(board) == true
+    "The game has ended in a draw"
   end
 end
 
