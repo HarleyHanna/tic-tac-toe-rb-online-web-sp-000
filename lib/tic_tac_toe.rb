@@ -41,7 +41,7 @@ def play(board)
     turn(board)
   end
   if won?(board) == true
-    "Congratulations #{winner(board)}, you have won!"
+    "Congratulations #{winner(board)}!"
   elsif draw?(board) == true
     "The game has ended in a draw"
   end
