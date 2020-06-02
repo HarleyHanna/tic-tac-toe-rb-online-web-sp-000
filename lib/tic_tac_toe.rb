@@ -36,24 +36,6 @@ def turn(board)
   end
 end
 
-def play(board)
-  until over?(board) == true
-    turn(board)
-  end
-  if won?(board) == true
-    "Congratulations #{winner(board)}!"
-  elsif draw?(board) == true
-    "Cat's Game!"
-  end
-end
-
-
-
-
-
-
-
-
 def turn_count(board)
   turn_number = 0
   board.each do |turn| 
@@ -63,6 +45,7 @@ def turn_count(board)
   end
   return turn_number
 end
+
 
 def current_player(board)
   if turn_count(board) % 2 == 0
@@ -128,5 +111,16 @@ def winner(board)
     return "O"
   else
     return nil
+  end
+end
+
+def play(board)
+  until over?(board) == true
+    turn(board)
+  end
+  if won?(board) == true
+    "Congratulations #{winner(board)}!"
+  elsif draw?(board) == true
+    "Cat's Game!"
   end
 end
